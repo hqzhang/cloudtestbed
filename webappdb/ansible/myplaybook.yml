@@ -1,0 +1,10 @@
+---
+- hosts: [webservers]
+  sudo: yes
+  tasks:
+    - name: test connection
+      ping:
+      remote_user: hongqi
+    sudo: yes
+    - name: install apache2
+      apt: name=apache2 update_cache=yes state=latest

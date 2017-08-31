@@ -1,0 +1,16 @@
+1)setup your AWS account 
+  and create iam id/key
+2)Install Terraform
+  brew install terraform
+3)create a terrafile
+  
+4)terraform get 
+  terraform plan
+  terraform apply
+5)clean
+  terraform destroy
+Deploy a single server
+Deploy a single web server
+Deploy a cluster of web servers
+Deploy a load balancer
+Clean up
