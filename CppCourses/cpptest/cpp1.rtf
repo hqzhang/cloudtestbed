@@ -1,0 +1,304 @@
+{\rtf1\ansi\ansicpg1252\uc2 \deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f17\fnil\fcharset134\fprq2{\*\panose 02010600030101010101}\'cb\'ce\'cc\'e5{\*\falt SimSun};}
+{\f41\fnil\fcharset134\fprq2{\*\panose 02010600030101010101}@\'cb\'ce\'cc\'e5;}{\f242\froman\fcharset238\fprq2 Times New Roman CE;}{\f243\froman\fcharset204\fprq2 Times New Roman Cyr;}{\f245\froman\fcharset161\fprq2 Times New Roman Greek;}
+{\f246\froman\fcharset162\fprq2 Times New Roman Tur;}{\f247\froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f248\froman\fcharset178\fprq2 Times New Roman (Arabic);}{\f249\froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\f380\fnil\fcharset0\fprq2 SimSun Western{\*\falt SimSun};}{\f572\fnil\fcharset0\fprq2 @\'cb\'ce\'cc\'e5 Western;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;
+\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{
+\ql \li0\ri0\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \fs24\lang1033\langfe2052\loch\f0\hich\af0\dbch\af17\cgrid\langnp1033\langfenp2052 \snext0 Normal;}{\*\cs10 \additive Default Paragraph Font;}}{\info{\author bbtes}{\operator bbtes}
+{\creatim\yr2007\mo5\dy9\hr19\min32}{\revtim\yr2007\mo5\dy9\hr19\min32}{\version2}{\edmins0}{\nofpages7}{\nofwords1032}{\nofchars5886}{\*\company bbtes}{\nofcharsws7228}{\vern8247}}\paperw12240\paperh15840\margl1800\margr1800\margt1440\margb1440\gutter0 
+\widowctrl\ftnbj\aenddoc\noxlattoyen\expshrtn\noultrlspc\dntblnsbdb\nospaceforul\hyphcaps0\horzdoc\dghspace120\dgvspace120\dghorigin1701\dgvorigin1984\dghshow0\dgvshow3\jcompress\viewkind4\viewscale100\nolnhtadjtbl \fet0\sectd \linex0\sectdefaultcl 
+{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta \hich .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta \hich .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta \hich .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang
+{\pntxta \hich )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb \hich (}{\pntxta \hich )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb \hich (}{\pntxta \hich )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb \hich (}
+{\pntxta \hich )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb \hich (}{\pntxta \hich )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb \hich (}{\pntxta \hich )}}\pard\plain \ql \li0\ri0\nowidctlpar\faauto\rin0\lin0\itap0 
+\fs24\lang1033\langfe2052\loch\af0\hich\af0\dbch\af17\cgrid\langnp1033\langfenp2052 {\fs20\lang1033\langfe1033\loch\af17\langfenp1033 \hich\af0\dbch\af17\loch\f17 1.
+\par \hich\af0\dbch\af17\loch\f17  \tab struct Foo\{
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 int f1()\{
+\par \tab \tab \tab \hich\af0\dbch\af17\loch\f17 return 0;
+\par \tab \tab \}\hich\af0\dbch\af17\loch\f17 ;
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 int f2();
+\par \tab \}
+\par 
+\par \tab \hich\af0\dbch\af17\loch\f17 int Foo::f2()\{
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 return 0;
+\par \tab \}
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Referring to the sample code above, other than the names of the functions, what is the difference between the members functions "f1()" and "f2()"?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: f1() is an inline function;
+\par \hich\af0\dbch\af17\loch\f17 b: f2() is private
+\par \hich\af0\dbch\af17\loch\f17 c: f2() is static function
+\par \hich\af0\dbch\af17\loch\f17 d: f2() is an inline function
+\par \hich\af0\dbch\af17\loch\f17 e\hich\af0\dbch\af17\loch\f17 : f1() is a static function.
+\par \tab 
+\par \hich\af0\dbch\af17\loch\f17 2.
+\par \tab \hich\af0\dbch\af17\loch\f17 extern int* f(void)
+\par \tab 
+\par \hich\af0\dbch\af17\loch\f17 Refering to the sample code above, which one of the following declares the type of a variable that can store a pointer to "f"?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: typedef int* (*pfn)();
+\par \hich\af0\dbch\af17\loch\f17 b: typedef (int *) *pfn(void);
+\par \hich\af0\dbch\af17\loch\f17 c: typedef int* (*pfn(void));
+\par \hich\af0\dbch\af17\loch\f17 d: typedef extern int* (*pfn)();
+\par \hich\af0\dbch\af17\loch\f17 e: typedef int*(*pfn)
+\par 
+\par \hich\af0\dbch\af17\loch\f17 3.
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Which one of the following expressions is an example of a definition?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: struct mystruct;
+\par \hich\af0\dbch\af17\loch\f17 b: byte f();
+\par \hich\af0\dbch\af17\loch\f17 c: namespace mystd=std;
+\par \hich\af0\dbch\af17\loch\f17 d: typedef unsinged char byte;
+\par \hich\af0\dbch\af17\loch\f17 e: exte\hich\af0\dbch\af17\loch\f17 rn int i;
+\par 
+\par \hich\af0\dbch\af17\loch\f17 4.
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Regarding virtual functions, which one of the following is true?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: Virtual functions are the means by which polymorphism is achieved.
+\par \hich\af0\dbch\af17\loch\f17 b: Virtual functions promote information hiding.
+\par \hich\af0\dbch\af17\loch\f17 c: Virtual functions are implemented through compile tim\hich\af0\dbch\af17\loch\f17 e binding.
+\par \hich\af0\dbch\af17\loch\f17 d: Virtual functions are the means by which encapsulation is achieved
+\par \hich\af0\dbch\af17\loch\f17 d: Virtual functions are a staple of procedural programming.
+\par 
+\par 
+\par \hich\af0\dbch\af17\loch\f17 5.
+\par 
+\par \hich\af0\dbch\af17\loch\f17 With regard to a function that has NO exception specification list, which one of the following statements is true?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: Only exceptions in the standard library may be thrown.
+\par \hich\af0\dbch\af17\loch\f17 b: The function cannot throw an exception.
+\par \hich\af0\dbch\af17\loch\f17 c: The function can only throw exceptio\hich\af0\dbch\af17\loch\f17 ns via its callees.
+\par \hich\af0\dbch\af17\loch\f17 d: Only exceptions referenced by the function may be thrown.
+\par \hich\af0\dbch\af17\loch\f17 e: The function my throw any exception.
+\par 
+\par \hich\af0\dbch\af17\loch\f17 6.
+\par \tab \hich\af0\dbch\af17\loch\f17 namesapce
+\par \tab \{
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 int j;
+\par \tab \}
+\par \tab \hich\af0\dbch\af17\loch\f17 int main()
+\par \tab \{
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 //???
+\par \tab \}
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Referring to the sample code above, if you want to reference "j" in "main()",h\hich\af0\dbch\af17\loch\f17 ow do you go about doing this?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: First by using "namespace", then normally, as in : "int i=j;"
+\par \hich\af0\dbch\af17\loch\f17 b: First by using "namespace::j", then with the scope resolution operator, as in: "int i=::j;"
+\par \hich\af0\dbch\af17\loch\f17 c: "j" cannot be used anywherer but in the unnamed namespace
+\par \hich\af0\dbch\af17\loch\f17 d: \hich\af0\dbch\af17\loch\f17 Just by addressing it directly, as in: "int i=j;"
+\par \hich\af0\dbch\af17\loch\f17 e: First by using "namespace", then adding the scope resolution operator, as in: "int i = ::j;"
+\par 
+\par \hich\af0\dbch\af17\loch\f17 7.
+\par \tab \hich\af0\dbch\af17\loch\f17 int a=2048;
+\par \tab \hich\af0\dbch\af17\loch\f17 int b=1024;
+\par \tab \hich\af0\dbch\af17\loch\f17 int *pa = (&b-1);
+\par \tab \hich\af0\dbch\af17\loch\f17 int j=*pa++;
+\par \tab \hich\af0\dbch\af17\loch\f17 int k=*pa;
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Referring to the sample code above, what is the value of j and of k?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: j= address of b-1
+\par \hich\af0\dbch\af17\loch\f17    \hich\af0\dbch\af17\loch\f17 k= address of b
+\par 
+\par \hich\af0\dbch\af17\loch\f17 b: The piece of code shown results in undefined behavior.
+\par 
+\par \hich\af0\dbch\af17\loch\f17 c: j=2048
+\par \hich\af0\dbch\af17\loch\f17    k=1024
+\par 
+\par \hich\af0\dbch\af17\loch\f17 d: j= unknown (whatever is at address of b-1)
+\par \hich\af0\dbch\af17\loch\f17    \hich\af0\dbch\af17\loch\f17 k= unknown (what\hich\af0\dbch\af17\loch\f17 ever is at address of b)
+\par 
+\par \hich\af0\dbch\af17\loch\f17 e: j = unknown (whatever is at address of b-1)
+\par \hich\af0\dbch\af17\loch\f17    \hich\af0\dbch\af17\loch\f17 k = 1024
+\par 
+\par 
+\par \hich\af0\dbch\af17\loch\f17 8.
+\par 
+\par \tab \hich\af0\dbch\af17\loch\f17 class Vehicle\{
+\par \tab \hich\af0\dbch\af17\loch\f17 public:
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 int sizeOfWheels; //in inches
+\par \tab \hich\af0\dbch\af17\loch\f17 protected:
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 int numOfWhells;
+\par 
+\par \tab \hich\af0\dbch\af17\loch\f17 private:
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 int weight; //in pounds
+\par \tab \}\hich\af0\dbch\af17\loch\f17 ;
+\par 
+\par \tab \hich\af0\dbch\af17\loch\f17 class Car:protected Vehicle
+\par \tab \{
+\par \tab \hich\af0\dbch\af17\loch\f17 public:
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 Car()\{weight=2900; numOfWheels=4;sizeOfWheels=15;\}
+\par 
+\par \tab \hich\af0\dbch\af17\loch\f17 private
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 float milesPerGallon;
+\par \tab \}\hich\af0\dbch\af17\loch\f17 ;
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Referring to the sample code above, what is true about the constructor of class Car?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: It is incorrect; private data\hich\af0\dbch\af17\loch\f17  members in a base class cannot be re\hich\af0\dbch\af17\loch\f17 ferenced in a child class.
+\par \hich\af0\dbch\af17\loch\f17 b: It is incorrect; the "Car" class uses protected inheritance.
+\par \hich\af0\dbch\af17\loch\f17 c: It is incorrect; neither "weight" nor "numOfWheels" can be directly referenced in a child class.
+\par \hich\af0\dbch\af17\loch\f17 d: Although incomplete, it is syntactically correct with no error\hich\af0\dbch\af17\loch\f17 s.
+\par \hich\af0\dbch\af17\loch\f17 e: It is incorrect; you must use the scope resolution operator (::) to reference base class member variables
+\par 
+\par \hich\af0\dbch\af17\loch\f17 9.
+\par \tab \hich\af0\dbch\af17\loch\f17 class A\{
+\par \tab \}\hich\af0\dbch\af17\loch\f17 ;
+\par \tab 
+\par \tab \hich\af0\dbch\af17\loch\f17 class B\{
+\par \tab \hich\af0\dbch\af17\loch\f17 protected:
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 friend class A;
+\par \tab \}\hich\af0\dbch\af17\loch\f17 ;
+\par \tab 
+\par \tab \hich\af0\dbch\af17\loch\f17 class C\{
+\par \tab \hich\af0\dbch\af17\loch\f17 public:
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 friend class B;
+\par \tab \}\hich\af0\dbch\af17\loch\f17 ;
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Referring to the sample code above, assuming the above classes had datat members,
+\par \hich\af0\dbch\af17\loch\f17 what names of C's members could be used in definitions of members of A?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: None of C's data\hich\af0\dbch\af17\loch\f17  members
+\par \hich\af0\dbch\af17\loch\f17 b: Only private members;
+\par \hich\af0\dbch\af17\loch\f17 c: Only protected members
+\par \hich\af0\dbch\af17\loch\f17 d: All of C's data me\hich\af0\dbch\af17\loch\f17 mbers
+\par \hich\af0\dbch\af17\loch\f17 e: Only public members
+\par 
+\par \hich\af0\dbch\af17\loch\f17 10.
+\par \hich\af0\dbch\af17\loch\f17 How do you use the Standard Template Library's std::sort() template to sort an array declared as: "int v[1000];"?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: It is not possible to use the std::sort() function on a non-STL container, std::vector<int> would have t\hich\af0\dbch\af17\loch\f17 o be used.
+\par \hich\af0\dbch\af17\loch\f17 b: std::sort(v,v+1000);
+\par \hich\af0\dbch\af17\loch\f17 c: std::sort((void*)v,1000,sizeof(int),sortInt); (Assuming sortInt is defined properly)
+\par \hich\af0\dbch\af17\loch\f17 d: std::sort((void*)v, (void*)&v+1000,sizeof(int);
+\par \hich\af0\dbch\af17\loch\f17 e: std::sort(v);
+\par 
+\par \hich\af0\dbch\af17\loch\f17 11.
+\par \tab \hich\af0\dbch\af17\loch\f17 int x=0;
+\par 
+\par \tab \hich\af0\dbch\af17\loch\f17 for(int y=0;y<4;y++)
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 ++x;
+\par \tab \hich\af0\dbch\af17\loch\f17 int z=x+y;
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Regarding the sample code above, which statement is true, assuming the ANSI standard is followed?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: y=3
+\par \hich\af0\dbch\af17\loch\f17 b: x=5
+\par \hich\af0\dbch\af17\loch\f17 c: z=7
+\par \hich\af0\dbch\af17\loch\f17 d: z=8
+\par \hich\af0\dbch\af17\loch\f17 e: There is an error; the variable y is no longer in scope after the loop.
+\par 
+\par \hich\af0\dbch\af17\loch\f17 12.
+\par \hich\af0\dbch\af17\loch\f17 Which one of the following operators can only be \hich\af0\dbch\af17\loch\f17 overridden when implemented as a member function of the class for which it is being implemented?
+\par \hich\af0\dbch\af17\loch\f17 a: &(ampersand)
+\par \hich\af0\dbch\af17\loch\f17 b: +(plus)
+\par \hich\af0\dbch\af17\loch\f17 c: ! (exclamation point)
+\par \hich\af0\dbch\af17\loch\f17 d: = (equal)
+\par \hich\af0\dbch\af17\loch\f17 e: == (doubld equal)
+\par 
+\par \hich\af0\dbch\af17\loch\f17 13.
+\par \hich\af0\dbch\af17\loch\f17 According to the C++ standard, what is an object's internal represen\hich\af0\dbch\af17\loch\f17 tation in memory guaranteed to be?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: Initialized
+\par \hich\af0\dbch\af17\loch\f17 b: Contiguous
+\par \hich\af0\dbch\af17\loch\f17 c: On the stack
+\par \hich\af0\dbch\af17\loch\f17 d: On the heap;
+\par \hich\af0\dbch\af17\loch\f17 e: On a word boundary 
+\par 
+\par \hich\af0\dbch\af17\loch\f17 14.
+\par \hich\af0\dbch\af17\loch\f17 int ia[]=\{1,2,3\};
+\par \hich\af0\dbch\af17\loch\f17 int *pia =ia;
+\par \hich\af0\dbch\af17\loch\f17 const int *pci = pia;
+\par \hich\af0\dbch\af17\loch\f17 int x = *pci;
+\par \hich\af0\dbch\af17\loch\f17 *pci=5;
+\par \hich\af0\dbch\af17\loch\f17 int j=*(pci+1);
+\par 
+\par \hich\af0\dbch\af17\loch\f17 Referring th the sample code above, which one of the following statements is true?
+\par \hich\af0\dbch\af17\loch\f17 a: The statements are all legal.
+\par \hich\af0\dbch\af17\loch\f17 b: The statement "pci++" is illegal (trying to modify a constant pointer)
+\par \hich\af0\dbch\af17\loch\f17 c: The statement *pci=5 is illegal(the left hand value is a consta\hich\af0\dbch\af17\loch\f17 nt)
+\par \hich\af0\dbch\af17\loch\f17 d: The statement "int j=*(pci+1)" is illegal (trying to access a constant pointer).
+\par \hich\af0\dbch\af17\loch\f17 e: The statement "int x= *pci" is illegal (x must be constant)
+\par 
+\par 
+\par \hich\af0\dbch\af17\loch\f17 15.
+\par \hich\af0\dbch\af17\loch\f17 What is the default method of inheritance for a C++ class?
+\par \hich\af0\dbch\af17\loch\f17 a: public
+\par \hich\af0\dbch\af17\loch\f17 b: protected
+\par \hich\af0\dbch\af17\loch\f17 c: hidden
+\par \hich\af0\dbch\af17\loch\f17 d: visi\hich\af0\dbch\af17\loch\f17 ble
+\par \hich\af0\dbch\af17\loch\f17 e: private
+\par 
+\par \hich\af0\dbch\af17\loch\f17 16. Which one of the following statements regarding inheritance is true?
+\par \hich\af0\dbch\af17\loch\f17 a: Inheritance allows code reuse.
+\par \hich\af0\dbch\af17\loch\f17 b: Inheritance has precedence over polymorphism.
+\par \hich\af0\dbch\af17\loch\f17 c: Inheritance without polymorphism is impossible.
+\par \hich\af0\dbch\af17\loch\f17 d: Inheritance without polymorphism is the only way to develop good code.
+\par \hich\af0\dbch\af17\loch\f17 e: Polymorphism cannot be enforced in C++.
+\par 
+\par \hich\af0\dbch\af17\loch\f17 17.
+\par \tab \hich\af0\dbch\af17\loch\f17 int vi[7] = \{0,1,2,2,5,7,8\}
+\par \tab \hich\af0\dbch\af17\loch\f17 std::cout<<*std::adjacent_find(vi,vi+7,1,2);
+\par \tab 
+\par \hich\af0\dbch\af17\loch\f17 What is the output of the above code?
+\par \hich\af0\dbch\af17\loch\f17 a:1
+\par \hich\af0\dbch\af17\loch\f17 b: 2
+\par \hich\af0\dbch\af17\loch\f17 c: 3
+\par \hich\af0\dbch\af17\loch\f17 d: &v\hich\af0\dbch\af17\loch\f17 i[1]
+\par \hich\af0\dbch\af17\loch\f17 e: There is no output; it does not compile
+\par 
+\par \hich\af0\dbch\af17\loch\f17 18.
+\par \tab \hich\af0\dbch\af17\loch\f17 void f()
+\par \tab \{
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 int n=std::rand()%3;
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 if(n==1)
+\par \tab \tab \tab \hich\af0\dbch\af17\loch\f17 throw "1";
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 if(n==2)
+\par \tab \tab \tab \hich\af0\dbch\af17\loch\f17 throw 2;
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 if(n==3)
+\par \tab \tab \tab \hich\af0\dbch\af17\loch\f17 throw 4.5;
+\par \tab \}
+\par 
+\par \tab \hich\af0\dbch\af17\loch\f17 int main()
+\par \tab \{
+\par \tab \tab \hich\af0\dbch\af17\loch\f17 try\{
+\par \tab \tab \tab \hich\af0\dbch\af17\loch\f17 f();
+\par \tab \tab \}\hich\af0\dbch\af17\loch\f17 catch(...)\{
+\par \tab \tab \tab \hich\af0\dbch\af17\loch\f17 return 1;
+\par \tab \tab \}\hich\af0\dbch\af17\loch\f17 catch (int i)\{
+\par \tab \tab \tab \hich\af0\dbch\af17\loch\f17 return 2;
+\par \tab \tab \}\hich\af0\dbch\af17\loch\f17 catch(const char * cp)\{
+\par \tab \tab \tab \hich\af0\dbch\af17\loch\f17 return 3;
+\par \tab \tab \}
+\par \hich\af0\dbch\af17\loch\f17 What is the result of executing the sample code above?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: The return code will always be a 2 since the random number generator was not seeded
+\par \hich\af0\dbch\af17\loch\f17 b: It is unknown; it depends on the random number generated in "f()"
+\par \hich\af0\dbch\af17\loch\f17 c\hich\af0\dbch\af17\loch\f17 : It is unknown; it is implementation-specific.
+\par \hich\af0\dbch\af17\loch\f17 d: There is a syntax error because catch(...) is not the last catch clause.
+\par \hich\af0\dbch\af17\loch\f17 e: The return code will always be a 1 since all exceptions will be caught at hte first catch().
+\par 
+\par \hich\af0\dbch\af17\loch\f17 19.
+\par \hich\af0\dbch\af17\loch\f17 Where can the non-static datat \hich\af0\dbch\af17\loch\f17 members of a class be initialized?
+\par 
+\par \hich\af0\dbch\af17\loch\f17 a: In a catch block
+\par \hich\af0\dbch\af17\loch\f17 b: In a constructor
+\par \hich\af0\dbch\af17\loch\f17 c: In an overloaded new operator
+\par \hich\af0\dbch\af17\loch\f17 d: In a static initialization block
+\par \hich\af0\dbch\af17\loch\f17 e: In a namespace
+\par \tab \tab 
+\par \hich\af0\dbch\af17\loch\f17 20.
+\par \tab \hich\af0\dbch\af17\loch\f17 1: int i;
+\par \tab \hich\af0\dbch\af17\loch\f17 2: long double d;
+\par \tab \hich\af0\dbch\af17\loch\f17 3: unsigned float f;
+\par \tab \hich\af0\dbch\af17\loch\f17 4: char const *s;
+\par \tab \hich\af0\dbch\af17\loch\f17 5: signed const int *p;
+\par \hich\af0\dbch\af17\loch\f17 Referring to the sample code above, which one of the following definitions is NOT valid?
+\par \hich\af0\dbch\af17\loch\f17 a: Line 1
+\par \hich\af0\dbch\af17\loch\f17 b: Line 2
+\par \hich\af0\dbch\af17\loch\f17 c: Line 3
+\par \hich\af0\dbch\af17\loch\f17 d: Line 4
+\par }{\fs20\lang2052\langfe1033\loch\af17\langnp2052\langfenp1033 \hich\af0\dbch\af17\loch\f17 e: Line 5
+\par 
+\par }}
