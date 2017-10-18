@@ -1,0 +1,39 @@
+
+
+1. Topic for wiki
+
+1. Database Access
+1) SQL vs NonSQL
+2) ETCD Usage
+3) MongDB usage
+4) MySQL usage
+
+2. Web Programmig
+1) App web vs xx web
+2) REST API client and Server
+3) Tomcat vs Apach server
+4) Eclips Usage
+
+3. Android Programming
+1) Android SDK vs NDK
+2) Android JNI
+3) library create and application
+4) Async Task vs Services
+
+4. Cloud Programming
+1)  KVM vs VirtualBox
+2)  Kubernetes vs Networking
+3) VMWare vs EXSi 
+4) Lauching CoreOS
+5) Docker Container
+6) Openstack Usage
+7) AWS Usage 
+8) Ansible Usage
+9) terraform Usage
+
+5. Devops
+1) Jenkins Programming
+2) TCP/IP and Applications
+3) Git vs Github Usage
+4) Linux Commands Usage
+ 

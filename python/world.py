@@ -10,11 +10,18 @@ def print_time( threadName, delay):
       print "%s: %s" % ( threadName, time.ctime(time.time()) )
 
 # Create two threads as follows
-try:
-   thread.start_new_thread( print_time, ("Thread-1", 2, ) )
-   thread.start_new_thread( print_time, ("Thread-2", 4, ) )
-except:
-   print "Error: unable to start thread"
+#try:
+#   thread.start_new_thread( print_time, ("Thread-1", 2, ) )
+#   thread.start_new_thread( print_time, ("Thread-2", 4, ) )
+#except:
+#   print "Error: unable to start thread"
 
-while 1:
-   pass
+#while 1:
+#   pass
+def main():
+  print "Hello World!"
+  
+if __name__== "__main__":
+  main()
+
+print "Guru99"
