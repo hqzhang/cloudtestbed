@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+image=
+dirs="mydir yourdir hisdir"
+items="added  modified removed"
+file="myjson"
+ver=$(jq ".ref" $file )
+#echo ver=$ver
+myvar=${ver//\"/}
+echo version is $myvar
+#echo $items
+for dir in $dirs; do
+    for item in $items; do
+        flag=""
+        result=$(jq ".commit_head.${item}"  $file )
+           for var in $result; do
+              var=${var//\"/}
+              echo $var vs  $dir
+              if [[ $var == ${dir}* ]];then
+                 image=$image" "$dir
+                 flag="a"
+                 break
+              fi
+           done
+         if [[ $flag != "" ]]; then
+           break
+         fi
+    done
+
+done
+
+echo $image

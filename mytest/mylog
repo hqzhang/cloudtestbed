@@ -1,0 +1,38 @@
+version is /ref/master
+I am in first loop mydir
+I am in second loop ram=added
+[ "yourdir/afaf", "mydir/afa" ]
+i am in third loop [
+[ vs mydir
+i am in third loop "yourdir/afaf",
+yourdir/afaf, vs mydir
+i am in third loop "mydir/afa"
+mydir/afa vs mydir
+I will build mydir
+I am in first loop yourdir
+I am in second loop ram=added
+[ "yourdir/afaf", "mydir/afa" ]
+i am in third loop [
+[ vs yourdir
+i am in third loop "yourdir/afaf",
+yourdir/afaf, vs yourdir
+I will build yourdir
+I am in first loop hisdir
+I am in second loop ram=added
+[ "yourdir/afaf", "mydir/afa" ]
+i am in third loop [
+[ vs hisdir
+i am in third loop "yourdir/afaf",
+yourdir/afaf, vs hisdir
+i am in third loop "mydir/afa"
+mydir/afa vs hisdir
+i am in third loop ]
+] vs hisdir
+I am in second loop ram=modified
+[ "hisdir/rest", "mydir/afaf/afa" ]
+i am in third loop [
+[ vs hisdir
+i am in third loop "hisdir/rest",
+hisdir/rest, vs hisdir
+I will build hisdir
+mydir yourdir hisdir

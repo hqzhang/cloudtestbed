@@ -1,0 +1,11 @@
+{
+
+     "ref":"/ref/master",
+     "commit_head": {
+         "added":["yourdir/afaf","mydir/afa"],
+         "removed":["hisdir/add","mydir/rst"],
+         "modified":["hisdir/rest","mydir/afaf/afa"]
+
+ }
+
+}
