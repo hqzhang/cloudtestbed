@@ -1,5 +1,5 @@
 ---
-- hosts: weblocal
+- hosts: web
   sudo: yes
   roles:
     - role: ngnix

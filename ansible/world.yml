@@ -1,0 +1,11 @@
+---
+- hosts: web
+  vars:
+    myvar: 80
+    youvar: 80
+    hisvar: "/tmp/youfile888999"
+  sudo: yes
+  tasks:
+    - name: create a file
+      command: touch {{ hisvar }}
+      when: myvar == hisvar

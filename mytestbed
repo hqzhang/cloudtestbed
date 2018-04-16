@@ -1,0 +1,54 @@
+Welcome to the cloudtestbed wiki!
+
+This wiki will demo cloud related coding and tools shown as followings:
+
+== Quick Links ==
+###Cloud Programming###
+1)  KVM vs VirtualBox
+2)  Kubernetes vs Networking
+3) VMWare vs EXSi 
+5) Docker Container
+6) Openstack Usage
+7) AWS Usage
+* [Gemu vs KVM](https://github.com/hqzhang/cloudtestbed/wiki/Gemu-vs-KVM)
+* [Configure VM using Ansible](https://github.com/hqzhang/cloudtestbed/wiki/Configure-VM-using-Ansible)
+* [Launch VM using Terraform](https://github.com/hqzhang/cloudtestbed/wiki/Launch-a-VM-using-Terraform)
+* [Launch CoreOS on EXSi](https://github.com/hqzhang/cloudtestbed/wiki/Launch-Coreos-on-ESXi)
+* [Launch CoreOS on VirtualBox](https://github.com/hqzhang/cloudtestbed/wiki/Launch-CoreOS-on-VirtualBox)
+###Web Programming
+1) App web vs xx web
+2) REST API client and Server
+3) Tomcat vs Apach server
+4) Eclips Usage
+* [Json Editor and Json Schema](https://github.com/hqzhang/cloudtestbed/wiki/Json-Editor-and-Json-Schema
+* [Setup a File Server](https://github.com/hqzhang/cloudtestbed/wiki/Setup-a-File-Server)
+###1. Database Access
+1) SQL vs NonSQL
+* [Setup ETCD Cluster](https://github.com/hqzhang/cloudtestbed/wiki/Setup-ETCD-Cluster)
+3) MongDB usage
+4) MySQL usage
+####3. Android Programming
+* [Android Coding](https://github.com/hqzhang/cloudtestbed/wiki/Android-Coding)
+1) Android SDK vs NDK
+2) Android JNI
+3) library create and application
+4) Async Task vs Services
+####5. Devops
+* [Git Commands](https://github.com/hqzhang/cloudtestbed/wiki/Git-Commands)
+* [Jenkins Usage](https://github.com/hqzhang/cloudtestbed/wiki/Jenkins-Usage
+* [Github Pull Request](https://github.com/hqzhang/cloudtestbed/wiki/Github-Pull-Request)
+* [Setup Jenkins](https://github.com/hqzhang/cloudtestbed/wiki/Setup-Jenkins)
+2) TCP/IP and Applications
+3) Git vs Github Usage
+4) Linux Commands Usage
+######Programming
+* [Setup Development Environment](https://github.com/hqzhang/cloudtestbed/wiki/Setup-Development-Environment)
+* [Python Coding](https://github.com/hqzhang/cloudtestbed/wiki/Python-Coding)
+* [Golang Coding](https://github.com/hqzhang/cloudtestbed/wiki/Golang-Coding)
+* [C Coding](https://github.com/hqzhang/cloudtestbed/wiki/C-Coding)
+* [C Coding](https://github.com/hqzhang/cloudtestbed/wiki/C-Coding)
+* [Java Coding](https://github.com/hqzhang/cloudtestbed/wiki/Java-Coding)
+* [C++ Coding](https://github.com/hqzhang/cloudtestbed/wiki/C++-Coding)
+* [Makefile](https://github.com/hqzhang/cloudtestbed/wiki/Makefile)
+ 
+
