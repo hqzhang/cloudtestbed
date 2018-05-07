@@ -1,0 +1,502 @@
+alias ll='ls -al'
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+alias fg='find . -type f | xargs grep -sin --color '
+
+alias fn='find . -name '
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+export GOPATH=~/workspace/gocode
+export PATH=$PATH:~/Downloads/terraform/
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+export PATH=$PATH:/usr/local/go/bin
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+#good
+export XAUTHORITY=~/.Xauthority
+export PATH=$PATH:./
+alias grep='grep --color=auto'
+alias  fn='find . -name'
+# grep keywords type1 <type2> <type3>
+gt() { grep --include={*.$2,*.$3,.*.$4} -rni . -e $1 ; }
+gk(){ 
+   arg1=${1-mmmmmm} 
+   arg2=${2-mmmmmm} 
+   arg3=${3-mmmmmm} 
+   grep . -rni -e $arg1 -e $arg2 -e $arg3 
+ }
+ggg() {
+  grep -rin $1 hardware/qcom/gps
+  grep -rin $1 vendor/qcom/proprietary/gps
+  grep -rin vendor/qcom/proprietary/gps-noship     
+}
+
+cdhw(){
+  cd hareware/qcom/gps
+}
+cdgps(){
+  cd vendor/qcom/proprietary/gps
+}
+cdgn(){
+  cd vendor/qcom/proprietary/gps-noship
+}
+
+makemo(){
+source build/envsetup.sh 
+lunch  full_kodiak-userdebug
+make -j16
+make release -j16
+
+}
+alias   fg='find . -type f|xargs grep -n --color=auto --exclude-dir='.*' '
+alias   fgt='find . -type f|xargs grep -n --color=auto --exclude-dir='.*' --include '
+alias   fgn='find . -type f|xargs grep -inl --exclude-dir='.*''
+#alias  fgr='find . -type f|xargs grep -inl --exclude-dir='.*'|xargs sed -i -e 's/nanzh/emilyzh/g''
+#ffgr(){find .|xargs grep -inl --exclude-dir='.*'|xargs sed -i -e 's/$1/$2/g';}
+fgs(){ find . -type f|xargs grep -inl --exclude-dir='.*' $1 | xargs sed -i  "s/$1/$2/g" ;}
+fgd(){ find . -tyee f|xargs grep -in --exclude-dir='.*' "^(func|type).*$1.*(struct)*" ;
+       
+       }
+vif() { find -iname $1 -exec vim {} \; ; }
+export JAVA_HOME=/usr/lib/jvm/java-6-sun/bin
+export PATH=$JAVA_HOME:$PATH
+alias ..1='cd ../'
+alias ..2='cd ../../'
+alias ..3='cd ../../../'
+alias ..4='cd ../../../../'
+alias gfetch='git fetch quic'
+
+alias greset='killws; git reset --hard HEAD~1'
+alias gmend='killws; git commit -a --amend'
+alias gst='git status'
+alias glg='git log'
+alias gpush='git push'
+alias gsearch='git log|grep -A10'
+alias getau='git describe'
+alias gswitch='git fetch quic && git co'
+vin() {
+   var=$(echo $1 |sed -e "s/:/ +/" )
+   vim $var
+}
+
+###download build
+rinitbr() {
+repo init -u ssh://git-android-scl.quicinc.com:29418/platform/manifest.git -b  $1\
+--repo-url=git://git.quicinc.com/tools/repo.git --repo-branch=caf/caf-stable && repo sync && makesh
+}
+resw() {
+ repo forall -c "git fetch quic"
+ repo forall -c "git co $1"
+}
+
+reinitau() {
+ repo init -u ssh://git-android-scl.quicinc.com:29418/platform/manifest.git -b refs/tags/$1 \
+-m versioned.xml --repo-url=git://git.quicinc.com/tools/repo.git --repo-branch=caf/caf-stable && repo sync
+}
+####git command
+###cherrypickup 30/616530/8
+#gpick(){
+# cat .git/config | grep 'projectname = ' | sed -e "s/.*projectname.*= /git fetch ssh:\/\/c_hongqi@review-android.quicinc.com:29418\//" -e "s/$/ HEAD:refs\/for\/$1/" | sh;
+# git fetch ssh://c_hongqi@review-android.quicinc.com:29418/platform/vendor/qcom-proprietary/ship/gps refs/changes/$1 && git cherry-pick FETCH_HEAD
+#}
+###commit
+alias gcom1='killws && git commit -a '
+alias gcom='git commit -a -m '
+
+###amend
+alias gmend='killws && git commit -a --amend'
+
+###swithbranch
+gcheckbr() { git fetch quic && git checkout quic/$1;  } 
+gcheckau() { git fetch quic && git checkout $1;  }
+###reset  
+alias greset='git reset --hard HEAD~1'
+
+###rebase
+grebase() { git rebase -i HEAD~2; }
+
+###git push 
+gpush1() { cat .git/config | grep 'projectname = ' | sed -e "s,.*projectname.*= ,git push ssh://$USER@review-android.quicinc.com:29418/," -e "s,$, HEAD:refs/for/$1," | sh;  }
+    
+###kill white space
+killws() { git show --name-only HEAD | grep -v " \|^$" | xargs -i{} sed -i -e 's/\t/    /g' -e 's/[ \t\r\f\v]*$//' {} ; }
+
+kws() { echo $1 | xargs -i{} sed -i -e 's/\t/    /g' -e 's/[ \t\r\f\v]*$//' {} ; }   #testOK
+
+kwsfs() { find . | xargs -i{} sed -i -e 's/\t/    /g' -e 's/[ \t\r\f\v]*$//' {} ; } 
+kwsf() { sed -e 's/\t/    /g' -e 's/[ \t\r\f\v]*$//' $1 ;} 
+###git push
+quicpush() {
+if [ $# -lt 1 ]
+ then
+  echo "$0 <branch-name> [from: e.g. HEAD or a commit id]"
+else
+ local defaultfrom="HEAD"
+ local project="$(sed -ne "s|\(.*\)projectname = \(.*\)|ssh://$USER@review-android.quicinc.com:29418/\2|p" .git/config)"
+ local specifier=
+ if [[ -n $2 ]]
+ then
+  defaultfrom=$2
+ fi
+ echo git push $project $defaultfrom:refs/for/$1|sh
+fi
+}
+ 
+##make build
+makesh() {  
+ target=${1-msm8974}
+ source build/envsetup.sh
+ choosecombo release $target userdebug
+ make -j4 |tee makelog
+ }
+##make build again
+makelunch() {
+ target=${1-msm8974}
+ combine=$target-userdebug
+ echo $combine
+ source build/envsetup.sh
+ lunch $combine
+ make -j8
+ }
+###flash build
+flash() {
+ echo fully qualified name %1
+ set mypath=%1
+ pushd %mypath%
+ adb wait-for-device
+ adb reboot bootloader
+ adb wait-for-device
+ fastboot flash boot boot.img
+ fastboot flash recovery recovery.img 
+ fastboot flash system system.img
+ fastboot flash cache cache.img 
+ fastboot flash persist persist.img
+ fastboot flash userdata userdata.img 
+ fastboot continue
+ popd
+ adb logcat -v threadtime|tee mybuildlog
+}
+
+###set debug
+setlevel() {
+ adb root
+ adb remount
+ adb pull  /etc/gps.conf
+ sed -i -e "s/DEBUG_LEVEL.*=.*/DEBUG_LEVEL = 5/" gps.conf
+ adb push gps.conf /etc/
+ }
+setdebug(){
+ adb root
+ adb wait-for-device
+ adb remount
+ echo set java and native debug
+ adb push \\c-hongqi\Android\android-sdk\platform-tools\local.prop /data
+ adb shell chmod 600 /data/local.prop
+ setlevel
+}
+##install ODLT
+installodlt(){
+ adb wait-for-device
+ adb root
+ adb wait-for-device
+ adb remount
+ set mypath=\\C-HONGQI\Users\c_hongqi\latest\
+
+pushd %mypath%
+ adb push \\C-HONGQI\Users\c_hongqi\latest\ODLT.apk /system/app
+ adb push \\C-HONGQI\Users\c_hongqi\latest\libloc2jnibridge.so /system/vendor/lib 
+ adb push \\C-HONGQI\Users\c_hongqi\latest\libdiagbridge.so /system/vendor/lib
+ adb push \\C-HONGQI\Users\c_hongqi\latest\qmapbridge.jar /system/framework
+ adb push \\C-HONGQI\Users\c_hongqi\latest\com.qualcomm.qmapbridge.xml /system/etc/permissions
+ adb push \\C-HONGQI\Users\c_hongqi\latest\com.google.android.maps.jar /system/framework
+ adb push \\C-HONGQI\Users\c_hongqi\latest\com.google.android.maps.xml /system/etc/permissions
+ C:
+} 
+
+###backtrace using addr2line
+backtrace() {
+   target=${2:-msm8974}
+   if [ "$1" == "" ]; then
+       echo "Usage: logpath <target>"
+   else
+   cat $1 |sed -n  -e 's/vendor\///' -e 's/[ \t\r\f\v]*$//' -e 's/^.*#[0,1][0-9]  pc /pc /p'|awk '{print $1,$3, $2}'  |sed -e "s,pc ,./prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/arm-linux-androideabi-addr2line -e ./out/target/product/$target/symbols,"  | sh 
+   fi
+   }
+##backtrace filename symbolspth
+bt() {
+if [ "$1" == "" ]; then
+    echo "Usage: logpth symbolspath"
+else
+cat $1 |sed -n -e 's/vendor\///' -e 's/[ \t\r\f\v]*$//' -e 's/^.*#[0,1][0-9]  pc /pc /p'|awk '{print $1,$3, $2}' |sed -e "s,pc ,/local/mnt2/workspace2/hongqi/BacktraceProj/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/arm-linux-androideabi-addr2line -C -f -p -e $2,"  | sh
+fi
+}
+vin1() {
+     echo $1 |sed -e "s/:/ +/" -e 's/^/vim /'|xargs -o vim     
+}
+
+vs() {
+     local ws1 = $(/local/mnt2/workspace2/hongqi)
+     local ws2 = $(/local/mnt3/workspace3/hongqi)
+     bash
+     cd $ws1
+}
+tst() {
+target=$2
+cat $1 |sed -n -e 's/^.*#[0,1][0-9]  pc /pc /p'|awk '{print $1,$3, $2}'|sed  -e "s,^M,," -e "s,pc ,./prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/arm-linux-androideabi-addr2line -C -f -p -e  ./out/target/product/$target/symbols," | sh
+}
+function ws() {
+    if [ $# -lt 1 ] || ! [[ "$1" =~ ^[[:digit:]]$ ]]
+    then
+        echo "Usage:"
+        echo "    $0 <hw/qc/gps>| <v/q/p/gps|non-gps>"
+        return 0;
+    fi
+    TARGET="/local/mnt${1}/workspace${1}/hongqi";
+
+    if [ 1 == $1 ]
+    then
+        TARGET="/local/mnt/workspace/hongqi"
+    fi
+
+    if [ -d $TARGET/${2} ]
+    then
+        cd $TARGET/${2}
+    else
+        cd $TARGET
+        echo "available dirs under $TARGET"
+        ls -d *
+        cd - 1>/dev/null
+    fi
+}
+alias ws1='ws 1 $@'
+alias ws2='ws 2 $@'
+alias ws3='ws 3 $@'
+function sp() {
+    TARGET1="./hardware/qcom/gps";
+    TARGET2="./vendor/qcom/proprietary/gps";
+    TARGET3="./vendor/qcom/proprietary/gps-noship";
+    if [ h == $1 ]
+    then
+        TARGET=$TARGET1
+    fi
+    if [ g == $1 ]
+    then
+        TARGET=$TARGET2
+    fi
+    if [ n == $1 ]
+    then
+        TARGET=$TARGET3
+    fi
+    if [ -d $TARGET ]
+    then
+        cd $TARGET
+    else
+        cd $TARGET
+        echo "available dirs under $TARGET"
+        ls -d *
+        cd - 1>/dev/null
+    fi
+}
+
+fgm() {
+ find ./hardware/qcom/gps |xargs grep -in $1;
+ find ./vendor/qcom/proprietary/gps |xargs grep -in $1;
+ find ./vendor/qcom/proprietary/gps-noship |xargs grep -in $1;
+}
+
+fnm() {
+    find ./hardware/qcom/gps -iname $1;
+    find ./vendor/qcom/proprietary/gps -iname $1;
+    find ./vendor/qcom/proprietary/gps-noship -iname $1;
+}
+dexe() { sudo docker exec -it $1 /bin/bash ;}
+addip(){ sudo ip addr add $2 dev $1 ;}
+delip(){ sudo ip addr del $2 dev $1 ;}
+alias delbr='sudo brctl delbr '
+alias vrc='vim ~/.bashrc'
+alias src='source ~/.bashrc'
+alias disp='docker inspect '
+alias drma='docker rm `docker ps -qa`'
+alias gd='clear;go run ~/workspace/go/src/cto-github.cisco.com/appstate/docker-driver/main.go'
+alias ggn='clear;go run ~/workspace/go/src/cto-github.cisco.com/appstate/netagent/main.go'
+alias ggs='clear;go run ~/workspace/go/src/cto-github.cisco.com/appstate/netagent/netagentserver/testserver.go'
+alias gob='go build'
+alias gg='go run main.go'
+alias gins='go install'
+alias gfmt='go fmt'
+alias drun='docker run'
+alias drm='docker rm'
+alias datt='docker attach'
+alias dcom='docker commit'
+alias dcp='docker cp'
+alias dcr='docker create'
+alias dimg='docker images'
+alias dpull='docker pull'
+alias dpush='docker push'
+alias dstart='docker start'
+alias dstop='docker stop'
+alias dres='docker restart'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias ipa='ip addr'
+alias chmodall='sudo chown -R hongqizh:hongqizh *' 
+alias cdd='cd ~/workspace/go/src/cto-github.cisco.com/appstate/docker-driver'
+alias cdt='cd ~/workspace/go/src/Project'
+alias cda='cd ~/workspace/go/src/cto-github.cisco.com/appstate'
+alias sshdocker='ssh -i ~/.ssh/id_rsa cloud-user@128.107.1.224'
+alias sshctl='ssh -i ~/.ssh/id_rsa cloud-user@128.107.1.238'
+alias sftpdocker='sftp -i ~/.ssh/id_rsa cloud-user@128.107.1.224'
+alias sftpctl='sftp -i ~/.ssh/id_rsa cloud-user@128.107.1.238'
+alias gn='go build ; nov '
+alias good='rm /tmp/openstack-driver.sock; go run ~/workspace/go/src/cto-github.cisco.com/appstate/openstack-driver/main.go'
+alias godd='rm /tmp/docker-driver.sock;go run ~/workspace/go/src/cto-github.cisco.com/appstate/docker-driver/main.go'
+alias goka='/home/hongqizh/kafka/run_kafka.sh'
+alias godep='/home/hongqizh/workspace/go/src/cto-github.cisco.com/appstate/manager/scripts/deploy_composition.sh'
+alias rm='rm -rf '
+alias ll='ls -al '
+alias cdb='cd /home/hongqizh/workspace/go/src/cto-github.cisco.com/appstate'
+alias setnet='sudo dhclient eth2'
+alias pingg='ping google.com'
+alias pingc='ping us-texas-3.cloud.cisco.com'
+alias pss='ps aux| grep '
+alias taruz='tar -zxvf '
+alias tarfile='tar -zcvf file.tar.gz'
+alias gl='glance '
+alias ht='heat '
+alias nv='nova '
+alias ks='keystone '
+alias nt='neutron '
+alias mt='ceilometer '
+alias tf='terraform '
+alias aw='aws ec2 '
+alias gcln='git clone '
+kss() { sudo kill 9 $(pgrep $1); }
+delport() { neutron port-list|grep $1| awk '{print $2}' |sed -e "s,^, neutron port-delete ,"|sh;}
+delsub() { neutron subnet-list|grep $1|awk '{print $2}' |sed -e "s,^, neutron subnet-delete ,"|sh;}
+delnet() { delport $1; delsub $1; neutron net-list|grep $1|awk '{print $2}' |sed -e "s,^, neutron net-delete ,"|sh;}
+installed () {
+  command -v "$1" >/dev/null 2>&1
+}
+alias build='repo init -u git@cto-github.cisco.com:AppState/build.git;repo sync;make -f src/cto-github.cisco.com/appstate/build/makefile'
+alias cln='rm -rf *;rm -rf .repo'
+findrt() { sudo find $1 -user root; }
+alias chhq='sudo chown -R hongqizh:hongqizh '*/' '
