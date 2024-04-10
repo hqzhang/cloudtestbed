@@ -3,19 +3,18 @@ name: Mixed inputs
 on:
   workflow_dispatch:
     inputs:
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
-      message:
-        required: true
-      use-emoji:
-        type: boolean
-        description: Include 🎉🤣 emojis
       environment:
-        type: environment
+        type: choice
+        description: 'Which environment to run this on'
+        required: true
+        default: 'development'
+        options:
+          - development
+          - production
+      tag:
+        type: string
+        description: 'Which tag to utilize'
+        required: true
 
 jobs:
   greet:
