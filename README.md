@@ -14,4 +14,11 @@ node('master'){
        echo "http://${commit[1]}/${myurl}"
     }
 }
+
+///////////
+{
+  "rules": {
+    "NoDef": "off"
+  }
+}
 ```
