@@ -17,8 +17,10 @@ node('master'){
 
 ///////////
 {
-  "rules": {
-    "NoDef": "off"
+    "extends": "recommended",
+    "rules": {
+      "NoDef": "off",
+      "UnnecessaryGString": "off"
+    }
   }
-}
 ```
