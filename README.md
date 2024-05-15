@@ -23,4 +23,7 @@ node('master'){
       "UnnecessaryGString": "off"
     }
   }
+when {
+                expression { return !env.Myvar.contains('INIT') && env.Yourvar.contains('OK') }
+            }
 ```
