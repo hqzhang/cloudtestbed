@@ -1,4 +1,4 @@
-import org.yaml.snakeyaml.Yaml
+```import org.yaml.snakeyaml.Yaml
 
 def data = """
       name: A
@@ -28,7 +28,7 @@ ret << map // Add the last map
 
 println ret
 
-
+```
 OnePageDemo
 https://ftp.riken.jp/Linux/centos/7/isos/x86_64/
 Objective: Do a Demo just one page.
