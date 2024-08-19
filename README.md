@@ -1,3 +1,34 @@
+import org.yaml.snakeyaml.Yaml
+
+def data = """
+      name: A
+      type: X
+      version: 12
+      name: B
+      type: Y
+      version: 13
+      name: C
+      type: Z
+      version: 14
+"""
+
+def lines = data.trim().split("\n")
+def ret = []
+def map = [:]
+
+lines.each { line ->
+    def (key, value) = line.split(":").collect { it.trim() }
+    if (key == 'name' && map) {
+        ret << map
+        map = [:]
+    }
+    map[key] = value
+}
+ret << map // Add the last map
+
+println ret
+
+
 OnePageDemo
 https://ftp.riken.jp/Linux/centos/7/isos/x86_64/
 Objective: Do a Demo just one page.
